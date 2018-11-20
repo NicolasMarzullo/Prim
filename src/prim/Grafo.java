@@ -30,6 +30,7 @@ public class Grafo {
 		List<Integer> nodosConectados = new LinkedList<>();
 		int pesoTotal = 0, nodoActual = 0;
 		PriorityQueue<Arista> colaNodoArista = new PriorityQueue<>();
+		List<Arista> arbolAbarcadorCostoMinimo = new LinkedList<>();
 		Arista aristaAux;
 		
 		//Agrego el priemr nodo sin analizar
@@ -49,14 +50,14 @@ public class Grafo {
 			}
 			
 			nodoActual = aristaAux.getNodoDestino();
-			
+			arbolAbarcadorCostoMinimo.add(aristaAux);
 			// Acumulo peso y agrego 
 			pesoTotal += aristaAux.getPeso();
 			nodosConectados.add(nodoActual);
-
+			
 		}
 
-		return new SalidaPrim(pesoTotal, nodosConectados);
+		return new SalidaPrim(pesoTotal, arbolAbarcadorCostoMinimo);
 	}
 
 }
