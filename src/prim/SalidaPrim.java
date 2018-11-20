@@ -16,7 +16,7 @@ public class SalidaPrim {
 	@Override
 	public String toString() {
 		System.out.println("Peso total: " + this.pesoTotal);
-		System.out.println("Orden de la lista: ");
+		System.out.println("Arbol: ");
 		for(Arista a: this.arbolAbarcadorCostoMinimo) {
 			System.out.println("Arista: " + a.getNodoDestino() + "  <----->  " + a.getNodoOrigen()  + "  Peso: " + a.getPeso());
 		}
